@@ -26,6 +26,8 @@ header h1 {
 
 .note-wrapper {
   padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 footer {
@@ -44,9 +46,7 @@ footer p {
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
   margin: 16px;
-  float: left;
 }
 .note h1 {
   font-size: 1.1em;
@@ -74,7 +74,7 @@ footer p {
 
 form.create-note {
   position: relative;
-  width: 480px;
+  max-width: 480px;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
@@ -104,4 +104,16 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .note-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .note-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
